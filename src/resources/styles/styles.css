@@ -1,0 +1,49 @@
+/* Allgemeine Schriftgröße für Labels */
+QLabel {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: white;
+}
+QLabel#label {
+    font-size: 32px;
+}
+
+/* Buttons */
+QPushButton {
+    font-size: 18px;
+    padding: 10px;
+    min-height: 50px;
+    border-radius: 8px;
+    background-color: #4c93af;
+    color: white;
+}
+/* Hover-Effekt */
+QPushButton:hover {
+    background-color: #18576e;
+    transform: scale(0.5);
+}
+
+/* Eingabefelder (QLineEdit) */
+QLineEdit {
+    font-size: 16px;
+    padding: 8px;
+    min-height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Dropdown-Menüs (QComboBox) */
+QComboBox {
+    font-size: 16px;
+    padding: 8px;
+    min-height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Ergebnis-Label */
+QLabel#result_label {
+    font-size: 20px;
+    margin-top: 20px;
+    color: #4c93af;
+}
