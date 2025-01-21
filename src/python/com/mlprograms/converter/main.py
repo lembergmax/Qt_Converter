@@ -1,11 +1,13 @@
 import os
 import sys
+from pathlib import Path
 
 from PyQt6.QtWidgets import QApplication
 import src.python.com.mlprograms.converter.converter as converter
 
 
 if __name__ == '__main__':
+
     app = QApplication(sys.argv)
 
     # CSS laden

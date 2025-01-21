@@ -72,34 +72,19 @@ class UnitConverterApp(QWidget):
 
         # Buttons für Umrechnungsarten
         self.length_button = QPushButton("Längen")
-        self.length_button.clicked.connect(self.open_length_converter)
-        layout.addWidget(self.length_button)
-
         self.area_button = QPushButton("Flächen")
-        self.area_button.clicked.connect(self.open_area_converter)
-        layout.addWidget(self.area_button)
-
         self.volume_button = QPushButton("Volumen")
-        self.volume_button.clicked.connect(self.open_volume_converter)
-        layout.addWidget(self.volume_button)
-
         self.weight_button = QPushButton("Gewicht")
+
+        self.length_button.clicked.connect(self.open_length_converter)
+        self.area_button.clicked.connect(self.open_area_converter)
+        self.volume_button.clicked.connect(self.open_volume_converter)
         self.weight_button.clicked.connect(self.open_weight_converter)
+
+        layout.addWidget(self.length_button)
+        layout.addWidget(self.area_button)
+        layout.addWidget(self.volume_button)
         layout.addWidget(self.weight_button)
-
-        # TODO: add if temperature Converter is implemented
-        """
-        self.temperature_button = QPushButton("Temperatur")
-        self.temperature_button.clicked.connect(self.open_temperature_converter)
-        layout.addWidget(self.temperature_button)
-        """
-
-        # TODO: add if speed Converter is implemented
-        """
-        self.speed_button = QPushButton("Geschwindigkeit")
-        self.speed_button.clicked.connect(self.open_speed_converter)
-        layout.addWidget(self.speed_button)
-        """
 
         # Verlaufsanzeige
         self.history_label = QLabel("Gesamter Verlauf:")
@@ -162,26 +147,6 @@ class UnitConverterApp(QWidget):
         self.hide()
         self.weight_converter = WeightConverter(self, self.last_geometry)
         self.weight_converter.show()
-
-    # TODO: add if temperature Converter is implemented
-    """
-    @pyqtSlot()
-    def open_temperature_converter(self):
-        self.save_geometry()
-        self.hide()
-        self.temperature_converter = TemperatureConverter(self, self.last_geometry)
-        self.temperature_converter.show()
-    """
-
-    # TODO: add if speed Converter is implemented
-    """
-    @pyqtSlot()
-    def open_speed_converter(self):
-        self.save_geometry()
-        self.hide()
-        self.speed_converter = SpeedConverter(self, self.last_geometry)
-        self.speed_converter.show()
-    """
 
 class BaseConverter(QWidget):
     def __init__(self, parent, geometry, title, units, category):
@@ -345,75 +310,3 @@ class WeightConverter(BaseConverter):
             'lb': 0.453592,
             'oz': 0.0283495
         }
-
-# TODO: check if the SpeedConverter class is correct (values / calculation)
-"""
-class SpeedConverter(BaseConverter):
-    def __init__(self, parent, geometry):
-        super().__init__(parent, geometry, 'Geschwindigkeitsumrechner',
-                         ['m/s (Meter pro Sekunde)', 'km/h (Kilometer pro Stunde)', 'mph (Meilen pro Stunde)',
-                          'knot (Knoten)'], 'Geschwindigkeit')
-
-    def get_conversion_factors(self):
-        return {
-            'm/s': 1,
-            'km/h': 3.6,
-            'mph': 2.23694,
-            'knot': 1.94384
-        }
-"""
-
-# TODO: fix the TemperatureConverter class (wrong values / calculation)
-"""
-class TemperatureConverter(BaseConverter):
-    def __init__(self, parent, geometry):
-        super().__init__(parent, geometry, 'Temperaturumrechner',
-                         ['°C (Celsius)', '°F (Fahrenheit)', 'K (Kelvin)'], 'Temperatur')
-
-    def get_conversion_factors(self):
-        return {}  # Keine direkten Faktoren nötig
-
-    @pyqtSlot()
-    def convert(self):
-        global converted_value
-
-        try:
-            value = float(self.input_value.text().replace(",", "."))
-            from_unit = self.from_unit.currentText().split()[0]
-            to_unit = self.to_unit.currentText().split()[0]
-
-            if from_unit == to_unit:
-                converted_value = value
-            elif from_unit == '°C':
-                if to_unit == '°F':
-                    converted_value = value * 9/5 + 32
-                elif to_unit == 'K':
-                    converted_value = value + 273.15
-            elif from_unit == '°F':
-                if to_unit == '°C':
-                    converted_value = (value - 32) * 5/9
-                elif to_unit == 'K':
-                    converted_value = (value - 32) * 5/9 + 273.15
-            elif from_unit == 'K':
-                if to_unit == '°C':
-                    converted_value = value - 273.15
-                elif to_unit == '°F':
-                    converted_value = (value - 273.15) * 9/5 + 32
-            else:
-                raise ValueError("Ungültige Einheit")
-
-            self.result_label.setText(f"Ergebnis: {converted_value:.2f} {to_unit}")
-
-            add_to_history(
-                {
-                    "category": self.category,
-                    "value": value,
-                    "from_unit": from_unit,
-                    "to_unit": to_unit,
-                    "result": converted_value,
-                }
-            )
-            self.update_history_view()
-        except ValueError as e:
-            QMessageBox.critical(self, "Fehler", f"Ungültige Eingabe! Gib eine gültige Zahl ein.\n\n({e})")
-"""
