@@ -80,22 +80,8 @@ python main.py
 
 > Stelle sicher, dass die Datei `resources/styles/styles.css` vorhanden ist.
 
-## 📁 Projektstruktur
+🛡️ Lizenz
+Dieses Projekt steht unter der Apache License, Version 2.0.
+Du darfst den Code verwenden, verändern und verbreiten – auch kommerziell – solange du die Lizenzbedingungen einhältst.
 
-```plaintext
-.
-├── main.py
-├── src/
-│   └── python/com/mlprograms/converter/converter.py
-├── resources/
-│   └── styles/
-│       └── styles.css
-├── history.json
-└── window_geometry.json
-```
-
----
-
-## 🛡️ Lizenz
-
-Dieses Projekt steht unter der **MIT License** – siehe [LICENSE](./LICENSE) für mehr Infos.
+Die vollständige Lizenz findest du in der Datei LICENSE.
