@@ -1,0 +1,101 @@
+# 🧮 Einheitenumrechner (Python + PyQt6)
+
+Ein moderner, benutzerfreundlicher Einheitenumrechner für Desktop, entwickelt mit **Python 3** und **PyQt6**.  
+Ermöglicht die Umrechnung von Längen, Flächen, Volumen und Gewicht – inklusive Umrechnungsverlauf und schöner GUI mit CSS-Styling.
+
+## 📸 Screenshots
+
+![image](https://github.com/user-attachments/assets/cd5bf586-de79-46ca-812b-f7f6503a6ab0)
+![image](https://github.com/user-attachments/assets/c2a326d5-0906-46bc-992f-93d50965db6f)
+![image](https://github.com/user-attachments/assets/d4d49568-1d70-441c-8864-b9640f93cf97)
+![image](https://github.com/user-attachments/assets/333b4b3d-d9ea-405b-ae7b-ba0062278cc1)
+![image](https://github.com/user-attachments/assets/abcdbc9f-f821-41d2-930e-a29f896c8db4)
+
+## ✨ Features
+
+- 📐 Umrechnung von:
+  - **Längen**
+  - **Flächen**
+  - **Volumen**
+  - **Gewicht**
+
+- 🧾 **Umrechnungsverlauf** (lokal gespeichert in JSON-Dateien)
+- 💾 **Fensterposition** & -größe werden automatisch gespeichert
+- 🎨 **Dark Mode** Look mit elegantem CSS-Styling
+- 🔁 Rückkehr-Funktion zum Hauptmenü
+- 🚫 Verlauf löschen mit einem Klick
+
+## 📏 Unterstützte Einheiten
+
+### 🔹 Längen
+- `m` – Meter  
+- `km` – Kilometer  
+- `cm` – Zentimeter  
+- `mm` – Millimeter  
+- `ft` – Fuß (Feet)  
+- `in` – Zoll (Inch)  
+- `yd` – Yard  
+
+### 🔹 Flächen
+- `m²` – Quadratmeter  
+- `km²` – Quadratkilometer  
+- `ha` – Hektar  
+- `ft²` – Quadratfuß  
+- `in²` – Quadratzoll  
+- `yd²` – Quadratyard  
+
+### 🔹 Volumen
+- `m³` – Kubikmeter  
+- `l` – Liter  
+- `ml` – Milliliter  
+- `gal` – Gallone  
+- `ft³` – Kubikfuß  
+- `in³` – Kubikzoll  
+
+### 🔹 Gewicht
+- `kg` – Kilogramm  
+- `g` – Gramm  
+- `mg` – Milligramm  
+- `lb` – Pfund  
+- `oz` – Unze  
+
+---
+
+## 🔧 Installation & Ausführung
+
+### Voraussetzungen
+
+- Python 3.10+
+- PyQt6 installieren:
+
+```bash
+pip install PyQt6
+````
+
+### Starten
+
+```bash
+python main.py
+```
+
+> Stelle sicher, dass die Datei `resources/styles/styles.css` vorhanden ist.
+
+## 📁 Projektstruktur
+
+```plaintext
+.
+├── main.py
+├── src/
+│   └── python/com/mlprograms/converter/converter.py
+├── resources/
+│   └── styles/
+│       └── styles.css
+├── history.json
+└── window_geometry.json
+```
+
+---
+
+## 🛡️ Lizenz
+
+Dieses Projekt steht unter der **MIT License** – siehe [LICENSE](./LICENSE) für mehr Infos.
