@@ -1,4 +1,5 @@
 # 🧮 Einheitenumrechner (Python + PyQt6)
+## Ein kleines Schulprojekt
 
 Ein moderner, benutzerfreundlicher Einheitenumrechner für Desktop, entwickelt mit **Python 3** und **PyQt6**.  
 Ermöglicht die Umrechnung von Längen, Flächen, Volumen und Gewicht – inklusive Umrechnungsverlauf und schöner GUI mit CSS-Styling.
